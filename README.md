@@ -14,13 +14,13 @@ It can currently extract:
 - Activated Google services (YouTube, Photos, Maps, News360, Hangouts, etc.)
 - Possible YouTube channel
 - Possible other usernames
-- Public photos (P)
-- Phones models (P)
-- Phones firmwares (P)
-- Installed softwares (P)
 - Google Maps reviews (M)
 - Possible physical location (M)
 - Events from Google Calendar (C)
+- ~~Public photos (P)~~
+- ~~Phones models (P)~~
+- ~~Phones firmwares (P)~~
+- ~~Installed softwares (P)~~
 
 The features marked with a **(P)** require the target account to have the default setting of `Allow the people you share content with to download your photos and videos` on the Google AlbumArchive, or if the target has ever used Picasa linked to their Google account.\
 More info [here](https://github.com/mxrch/GHunt#%EF%B8%8F-protecting-yourself).
@@ -40,6 +40,7 @@ Either this is a bug and this will be fixed, either it's a protection that we ne
 - **03/10/2020** : Successfully bypassed. 🕺 (commit 01dc016)\
 It requires the "Profile photos" album to be public (it is by default)
 - **20/10/2020** : Google WebArchive now returns a 404 even when coming from the "Profile photos" album, so **the photos scraping is temporary (or permanently) disabled.** (commit e762543)
+- **25/11/2020** : Google now removes the name from the Google Maps profile if the user has 0 reviews (or contributions, even private). I did not find a bypass for the moment, so **all the help in the research of a bypass is appreciated.**
 
 # Installation
 
@@ -76,7 +77,7 @@ Adapt the command to your operating system if needed.
 # Usage
 For the first run and sometimes after, you'll need to check the validity of your cookies.\
 To do this, run `check_and_gen.py`. \
-If you don't have cookies stored (ex: first launch), you will be asked for the 4 required cookies. If they are valid, it will generate the Authentication token and the Google Docs & Hangouts tokens.
+If you don't have cookies stored (ex: first launch), you will be asked for the 5 required cookies. If they are valid, it will generate the Authentication token and the Google Docs & Hangouts tokens.
 
 Then, you can run the tool like this:
 ```bash
@@ -85,11 +86,11 @@ python hunt.py myemail@gmail.com
 
 ⚠️ I suggest you make an empty account just for this or use an account where you never login because depending on your browser/location, re-logging in into the Google Account used for the cookies can deauthorize them.
 
-# Where I find these 4 cookies ?
+# Where I find these 5 cookies ?
 1. Log in to accounts.google.com
 2. After that, open the Dev Tools window and navigate to the Storage tab (Shift + F9 on Firefox) (It's called "Application" on Chrome)\
 If you don't know how to open it, just right-click anywhere and click "Inspect Element".
-3. Then you'll find every cookie you need, including the 4 ones.
+3. Then you'll find every cookie you need, including the 5 ones.
 
 ![cookies](https://files.catbox.moe/9jy200.png)
 
